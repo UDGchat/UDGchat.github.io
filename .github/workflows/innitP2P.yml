@@ -1,11 +1,12 @@
 name: innitP2P
 on: page_build
 jobs:
-  runs-on: ubuntu-latest
   innit-server:
+    runs-on: ubuntu-latest
     steps:
       - run: node index.js
   innit-client:
+    runs-on: ubuntu-latest
     steps:
       - run: cd /react-gun/src
       - run: npm start
