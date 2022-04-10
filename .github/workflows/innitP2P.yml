@@ -1,7 +1,8 @@
 name: innitP2P
 on: page_build
 jobs:
-  inni-server:
+  runs-on: ubuntu-latest
+  innit-server:
     steps:
       - run: node index.js
   innit-client:
