@@ -7,10 +7,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: innitServer
-        run: |
-          npm install -g node
-          node ./index.js
-      - name: innitClient
+      - uses: actions/checkout@v3
+      - name: innit-server
+        run: node ./index.js
+      - name: innit-client
         working-directory: ./react-gun/src
         run: npm start
