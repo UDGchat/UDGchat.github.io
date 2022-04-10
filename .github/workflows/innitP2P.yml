@@ -4,8 +4,17 @@ jobs:
   innit-server:
     runs-on: ubuntu-latest
     steps:
-      - run: node index.js
-  innit-client:
-    steps:
-      - run: cd /react-gun/src
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
       - run: npm start
+
+  innit-client:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: |
+          cd react-gun/src
+          npm start
