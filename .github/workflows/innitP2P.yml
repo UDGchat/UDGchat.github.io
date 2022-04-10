@@ -1,22 +1,16 @@
 name: innitP2P
 on: page_build
 jobs:
-  innit-server:
+  GUNserver:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - run:
+      - name: innitServer
+        run: |
           npm install -g node
           node ./index.js
-
-  innit-client:
-    runs-on: ubuntu-latest
-    working-directory: ./react-gun/src
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - run: 
-          npm start
+      - name: innitClient
+        working-directory: ./react-gun/src
+        run: npm start
